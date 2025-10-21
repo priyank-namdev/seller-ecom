@@ -1,11 +1,11 @@
-import { StrictMode } from 'react';
+import { lazy, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App.tsx';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Register from './pages/Register/index.tsx';
+import App from './App.tsx';
+const Login = lazy(() => import('./pages/Login'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Register = lazy(() => import('./pages/Register/index.tsx'));
+import './index.css';
 
 const router = createBrowserRouter([
   {
